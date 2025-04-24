@@ -843,8 +843,7 @@ function initializeGanttChart(dv, container, pages, config) {
   
     // === 执行主体 ===
   
-    // 1. 注入 CSS
-    injectCSS(container, cssStyles);
+   
   
     // 2. 收集和处理任务
     const allTasks = collectAndProcessTasks(pages, teamMembers, timeWindow);
@@ -856,6 +855,8 @@ function initializeGanttChart(dv, container, pages, config) {
   
     // 4. 清空容器并创建主结构
     container.innerHTML = ''; // 清空现有内容
+     // 调整位置 1. 注入 CSS
+    injectCSS(container, cssStyles);
     const ganttContainer = container.createEl('div', { cls: 'gantt-container' });
   
     // 添加标题
